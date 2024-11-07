@@ -1,15 +1,21 @@
 """File to define River class."""
 
+__author__ = "730478902"
+
 from ex07.fish import Fish
 from ex07.bear import Bear
 
+
 class River:
-    
+    day: int
+    bears: list[Bear]
+    fish: list[Fish]
+
     day: int
     fish: list[Fish]
     bears: list[Bear]
-    
-    def __init__(self, num_fish: int, num_bears:int):
+
+    def __init__(self, num_fish: int, num_bears: int):
         """New River with num_fish Fish and num_bears Bears"""
         self.day: int = 0
         self.fish: list[Fish] = []
@@ -25,19 +31,23 @@ class River:
 
     def bears_eating(self):
         return None
-    
+
     def check_hunger(self):
         return None
-        
+
     def repopulate_fish(self):
         return None
-    
+
     def repopulate_bears(self):
         return None
-    
+
     def view_river(self):
+        """Prints the river status"""
+        print(f"~~ Day {self.day}: ~~")
+        print(f"Fish population: {self.fish}")
+        print(f"Bear population: {self.bears}")
         return None
-            
+
     def one_river_day(self):
         """Simulate one day of life in the river"""
         # Increase day by 1
@@ -60,4 +70,13 @@ class River:
         self.repopulate_bears()
         # Visualize River
         self.view_river()
-            
+
+    def one_river_week(self):
+        """Stimulates one week in the life of the river."""
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
